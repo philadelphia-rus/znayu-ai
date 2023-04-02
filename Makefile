@@ -82,3 +82,5 @@ start_bot: .env
 .PHONY: start_docker_fastapi
 start_docker_fastapi:
 	@echo "Running docker FastAPI..."
+	docker build -t znayu-ai .
+	docker run -d --name znayu-ai-fastapi -p 8069:8069 znayu-ai

@@ -3,3 +3,4 @@ openai
 fastapi
 uvicorn
 scikit-learn
+aiogram
