@@ -55,10 +55,12 @@ def ask(query: str):
     db_ask(query, faq_strings, top_n=TOP_N)
     return {"answer": db_ask(query, faq_strings)}
 
+
 @app.post("/add_knowledge")
 def add_knowledge(query: str, answer: str):
     faq_strings.append(query + " " + answer)
     return {"answer": "OK"}
+
 
 # ============================================================================
 # Main

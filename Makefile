@@ -14,6 +14,7 @@ help:
 	@echo "  install 		Install the dependencies"
 	@echo "  start_chat 	Start the chat in interactive mode"
 	@echo "  start_service  Start the FastAPI service"
+	@echo "  start_docker_fastapi  Start the FastAPI service in docker"
 	@echo "  start_bot		Start the TG bot"
 	@echo " "
 	@echo "  - DEVELOPMENT -"
@@ -77,3 +78,7 @@ start_service: .env
 start_bot: .env
 	@echo "Running bot..."
 	$(python) src/bot.py
+
+.PHONY: start_docker_fastapi
+start_docker_fastapi:
+	@echo "Running docker FastAPI..."
