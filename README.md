@@ -44,6 +44,17 @@ make start_service           # Запуск сервиса
 make start_docker_fastapi    # Запуск сервиса в докере
 ```
 
+## Фичи
+
+- Динамическое измнение базы данных
+- Возможность использования в качестве телеграм бота
+- Наглядный интерфейс API
+
+## Скриншоты
+
+![chat_demonstration](docs/screenshots/chat.jpg)
+![bot_in_group_demonstration](docs/screenshots/bot_in_group.jpg)
+![api](docs/screenshots/api.jpg)
 ## Авторы
 
 Команда Филадельфия по-русски в рамках хакатона EESTECH Challenge 2023 от EESTEC LC Saint-Petersburg - [hack link](https://codenrock.com/contests/hackathon-eestech-challenge#/)
