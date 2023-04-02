@@ -126,6 +126,16 @@ async def process_answer(message: types.Message, state: FSMContext):
     await state.finish()
 
 
+@dp.message_handler(commands=["ask"])
+async def ask(message: types.Message):
+    """Return inference"""
+    query = ' '.join(message.text.split(" ")[1:])
+    ans = generate_answer(query, faq_strings, top_n=5)
+    await message.reply(
+        ans,
+        parse_mode="HTML",
+    )
+
 @dp.message_handler()
 async def general(message: types.Message):
     """Any text message will be processed here"""
