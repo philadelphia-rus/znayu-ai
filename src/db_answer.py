@@ -9,13 +9,13 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 
-def load_faq_jsonl(faq_path: str = "src/knowledge.jsonl") -> list[dict]:
+def load_faq_jsonl(faq_path: str = "src/knowledge.jsonl") -> list:
     with open(faq_path, encoding="utf-8") as f:
         faq = [json.loads(line) for line in f]
     return faq
 
 
-def load_stopwords(path: str = "src/tfidf_stopwords.txt") -> list[str]:
+def load_stopwords(path: str = "src/tfidf_stopwords.txt") -> list:
     res = []
     for line in open(path, encoding="utf-8"):
         res.append(line.strip())
@@ -23,7 +23,7 @@ def load_stopwords(path: str = "src/tfidf_stopwords.txt") -> list[str]:
 
 
 def baseline_get_relevant_faq(
-    query: str, faq_strings: list[str], top_n: int = 5
+    query: str, faq_strings: list, top_n: int = 5
 ) -> list:
     """Calculate cosine similarity between query and faq
     and return most relevant faq"""
@@ -49,9 +49,9 @@ def baseline_get_relevant_faq(
 
 def generate_answer(
     query: str,
-    faq_strings: list[str],
+    faq_strings: list,
     top_n: int = 5,
-    history: list[dict] = None,
+    history: list = None,
 ):
     # Step 1 get relevant FAQ if first
     related_faqs = baseline_get_relevant_faq(query, faq_strings, top_n=top_n)

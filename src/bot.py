@@ -14,8 +14,8 @@ from db_answer import generate_answer, load_faq_jsonl
 
 
 def get_env(
-    required: list[str] = False, filter: bool = True, use_dotenv: bool = True
-) -> dict[str, str]:
+    required: list = False, filter: bool = True, use_dotenv: bool = True
+) -> dict:
     """Get required environment variables"""
     # Load environment variables
     if use_dotenv:
