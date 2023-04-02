@@ -5,7 +5,7 @@
 ## Навигация
 
 - [**ML сервис - "Знаю" - ИИ Помощник для базы знаний**](https://github.com/philadelphia-rus/znayu-ai) <-- Вы здесь
-- [Бекенд]()
+- [Бекенд](https://github.com/philadelphia-rus/backend)
 - [Мобильное приложение](https://github.com/philadelphia-rus/mobile-app)
 
 ## Стек
