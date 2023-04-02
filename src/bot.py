@@ -95,10 +95,6 @@ async def help(message: types.Message):
     )
 
 
-# Dialogue example
-# query = await dp.bot.wait_for("message")
-
-
 @dp.message_handler(commands=["add_knowledge"])
 async def add_knowledge(message: types.Message):
     """Add knowledge command handler"""
@@ -129,22 +125,17 @@ async def process_answer(message: types.Message, state: FSMContext):
 @dp.message_handler(commands=["ask"])
 async def ask(message: types.Message):
     """Return inference"""
-    query = ' '.join(message.text.split(" ")[1:])
+    query = " ".join(message.text.split(" ")[1:])
     ans = generate_answer(query, faq_strings, top_n=5)
     await message.reply(
         ans,
         parse_mode="HTML",
     )
 
+
 @dp.message_handler()
 async def general(message: types.Message):
     """Any text message will be processed here"""
-    # if text not in message:
-    #     await message.answer(
-    #         locale["error"],
-    #         parse_mode="HTML",
-    #     )
-    #     return
     query = message.text
     ans = generate_answer(query, faq_strings, top_n=5)
     await message.answer(
